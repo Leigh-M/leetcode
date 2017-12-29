@@ -4,32 +4,32 @@
  */
 const longestCommonPrefix = (strs) => {
   if (strs === [''] || '' || null || undefined) {
-    console.log('Stops here');
+    console.log('Stops 1');
     return '';
   }
 
   if (strs.length === 1) {
-    console.log(`it stops here and has logged something${strs[0]}`);
+    console.log(`stops 2 logged ${strs[0]}`);
     return strs[0];
   }
 
   if (strs.length === 0) {
-    console.log('stops here again');
+    console.log('stops 3');
     return '';
   }
 
   if (strs[0] === '') {
-    console.log('stops finally');
+    console.log('stops 4');
     return '';
   }
 
   if (strs[0] === ['']) {
-    console.log('stops finally2');
+    console.log('stops 5');
     return '';
   }
 
   if (strs[0].length === 0) {
-    console.log('stops finally2');
+    console.log('stops 6');
     return '';
   }
 
@@ -43,7 +43,7 @@ const longestCommonPrefix = (strs) => {
     for (let i = 1; i < arr.length; i++) {
       if ((i === arr.length - 1) && (arr[0][j] === arr[i][j])) {
         mtchStr += arr[i][j];
-        console.log(mtchStr);
+        // console.log(mtchStr);
       }
       if (arr[0][j] !== arr[i][j]) {
         console.log(mtchStr);
@@ -56,7 +56,7 @@ const longestCommonPrefix = (strs) => {
   return mtchStr;
 };
 
-// longestCommonPrefix(['ca', 'ca']);
+longestCommonPrefix(['ca', 'ca']);
 
 module.exports = longestCommonPrefix;
 

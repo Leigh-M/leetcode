@@ -21,3 +21,5 @@ const isPalindrome = (x) => {
   return true;
 };
 console.log(isPalindrome(2002));
+
+module.exports = isPalindrome;
