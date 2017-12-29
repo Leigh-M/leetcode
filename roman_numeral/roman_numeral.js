@@ -128,5 +128,6 @@ const romanToInt = (s) => {
   // return Tot;  to return a value instead of log
 };
 
+// romanToInt('MMMDCCLXV');
 
-romanToInt('MMMDCCLXV');
+module.exports = romanToInt;
