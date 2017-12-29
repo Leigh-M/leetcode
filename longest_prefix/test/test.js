@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
-const longestCommonPrefix = require('../longest_prefix1.js');
+const longestCommonPrefix = require('./longest_prefix.js');
 
-describe('A basic test', () => {
-  it('Should match from input args and output the longest prefix match or ""', () => {
+describe('Test harness', function () {
+  it('Should match from input args and output the longest prefix match or "" if no match', function () {
     expect(longestCommonPrefix(["a", "a"])).to.equal("a");
     expect(longestCommonPrefix(["abca", "abc"])).to.equal("abc");
     expect(longestCommonPrefix([""])).to.equal("");
@@ -14,22 +14,3 @@ describe('A basic test', () => {
     expect(longestCommonPrefix(["abca", "aba", "aaab"])).to.equal("a");
   });
 });
-
-/*
-["a"] or ["c", "c"] or ["abca", "abc"]   [""] = ""    ["a"]
-// ["a","a","b"]      ["ab","abc","ab"]     ["aa","ab"]
-// ["flower","flow","flight"]
-// ["ca","a"]   exp  ""
-// ["c", "c"]   exp  "c"
-// "abca","aba","aaab"
-
-describe('A basic test2', () => {
-  it('Should pass when this 300 is OK', () => {
-    expect(somevar3).to.equal(300);
-  });
-  it('Should pass when this 400 is OK', () => {
-    expect(somevar4).to.equal(400);
-  });
-});
-
-*/

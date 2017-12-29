@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const reverse = require('../reverse_int.js');
+const reverse = require('./reverse_int.js');
 
 describe('A basic test', () => {
   it('Should reverse the integer', function () {

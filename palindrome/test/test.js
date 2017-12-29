@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
-const isPalindrome = require('../palin.js');
+const isPalindrome = require('./palin.js');
 
-describe('A basic test', () => {
+describe('A basic test', function () {
   it('Should return true if input int is palindrome, false if not', function () {
     expect(isPalindrome(2002)).to.be.true;
     expect(isPalindrome(4004)).to.be.true;
