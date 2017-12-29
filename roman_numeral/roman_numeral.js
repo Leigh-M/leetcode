@@ -123,9 +123,9 @@ const romanToInt = (s) => {
     Str = Str.replace('I', '');
   }
 
-  console.log(Tot);
+//  console.log(Tot);
 
-  // return Tot;  to return a value instead of log
+  return Tot;
 };
 
 // romanToInt('MMMDCCLXV');
