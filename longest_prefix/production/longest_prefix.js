@@ -3,28 +3,12 @@
  * @return {string}
  */
 const longestCommonPrefix = (strs) => {
-  if (strs === [''] || '' || null || undefined) {
+  if (strs === [''] || '' || null || undefined || (strs.length === 0) || (strs[0] === '') || (strs[0] === ['']) || (strs[0].length === 0)) {
     return '';
   }
 
   if (strs.length === 1) {
     return strs[0];
-  }
-
-  if (strs.length === 0) {
-    return '';
-  }
-
-  if (strs[0] === '') {
-    return '';
-  }
-
-  if (strs[0] === ['']) {
-    return '';
-  }
-
-  if (strs[0].length === 0) {
-    return '';
   }
 
   const arr = strs;

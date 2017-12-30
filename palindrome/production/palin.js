@@ -13,7 +13,9 @@ const isPalindrome = (x) => {
   }
 
   while (i > 0) {
-    if (Math.floor(X / (10 ** i)) !== (X % 10)) { return false; }
+    if (Math.floor(X / (10 ** i)) !== (X % 10)) {
+      return false;
+    }
     X %= (10 ** i);
     X = Math.floor(X / 10);
     i -= 2;

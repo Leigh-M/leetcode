@@ -3,41 +3,28 @@
  * @return {string}
  */
 const longestCommonPrefix = (strs) => {
-  if (strs === [''] || '' || null || undefined) {
-    console.log(`Break1 strs0 = ${strs[0]}`);
+  if (strs === [''] || '' || null || undefined || (strs.length === 0) || (strs[0] === '') || (strs[0] === ['']) || (strs[0].length === 0)) {
     return '';
   }
 
   if (strs.length === 1) {
-    console.log(`Break2, strs0 = ${strs[0]}`);
     return strs[0];
   }
 
-  if (strs.length === 0) {
-    console.log(`Break 3 strs0 = ${strs[0]}`);
-    return '';
-  }
-
-  if (strs[0] === '') {
-    console.log(`Break 4 strs0 = ${strs[0]}`);
-    return '';
-  }
-
-  if (strs[0] === ['']) {
-    console.log(`Break 5 strs0 = ${strs[0]}`);
-    return '';
-  }
-
-  if (strs[0].length === 0) {
-    console.log(`Break 6 strs0 = ${strs[0]}`);
-    return '';
-  }
+  // sort the array of strings by length, find the shortest string that is the max character match
 
   const arr = strs;
   arr.sort((a, b) => a.length - b.length);
   const Len = arr[0].length;
 
   let mtchStr = '';
+
+  // cycle through twice, i is current input string from the array of strings, j is the character
+  // in each array; i is second loop below, to check a single character in the array then check
+  // contained in consecutive arrays
+
+  // if it hits the last array and that character in the last array matches the same character in
+  // the first array all have matched and that is your new longest prefix match
 
   for (let j = 0; j < Len; j++) {
     for (let i = 1; i < arr.length; i++) {
@@ -60,15 +47,10 @@ longestCommonPrefix(['abcde', 'abccde', 'abcdghf']);
 
 module.exports = longestCommonPrefix;
 
-
+// some test data
 // Try: ["a"] or ["c", "c"] or ["abca", "abc"]   [""] = ""    ["a"]
 // ["a","a","b"]      ["ab","abc","ab"]     ["aa","ab"]
 // ["flower","flow","flight"]
 // ["ca","a"]   exp  ""
 // ["c", "c"]   exp  "c"
-// "abca","aba","aaab"
-
-/*
-while  1st char is substr of 2nd + 3rd + 4th + arr.lenth-1   add it to STRmtchd
-return (or cons.log) STRmatchd
-*/
+// ["abca","aba","aaab"]
