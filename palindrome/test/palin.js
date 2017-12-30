@@ -7,7 +7,7 @@ const isPalindrome = (x) => {
   let X = x;
   if (X < 0) { return false; }
   if (X < 10) { return true; }
-  // for an int highest order, eg length without overflow on base 10 (10 ** i) = 9 same as 2 ** 32
+  // for an int highest order, or length without overflow on base 10 (10 ** i) = 9 same as 2 ** 32
   let i = 9;
   // find the length or 'order' on base 10, if Math.floor is 0, reduce i so 1005/ 10**3 = 1.005
   while (Math.floor(X / (10 ** i)) === 0) {
