@@ -9,7 +9,8 @@ Input is guaranteed to be within the range from 1 to 3999 = MMMCMXCIX
  */
 
 const romanToInt = (s) => {
-  let Str = s;
+  let Str = String(s);
+  console.log(Str);
   let Tot = 0;
 
   if (Str.indexOf('CM') !== -1) {
@@ -123,11 +124,11 @@ const romanToInt = (s) => {
     Str = Str.replace('I', '');
   }
 
-//  console.log(Tot);
-
+  console.log(Tot);
   return Tot;
 };
 
-// romanToInt('MMMDCCLXV');
+romanToInt('XXX');
 
+// for testing
 module.exports = romanToInt;

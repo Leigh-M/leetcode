@@ -1,10 +1,16 @@
 const expect = require('chai').expect;
-const twoSum = require('../twosum.js');
+const twoSum = require('./twosum.js');
 
-console.log(twoSum([3,2,4], 6));
+// console.log(twoSum([3,2,4], 6));
 
-describe('A basic test', function () {
-  it('Should take nums in array and return the value', function () {
-    expect(twoSum([3,2,4], 6)).to.equal([1,2]);
+describe('twoSum()', function() {
+  const tests = [
+    {args: [[3,2,4], 6], expected: [1, 2] },
+  ];
+  tests.forEach(function(test) {
+    it(`correctly checks ${test.args} equals last arg and outputs the index of the args`, function() {
+      const res = twoSum(...[test.args]);
+      expect(res).to.equal(test.expected);
+    });
   });
 });
