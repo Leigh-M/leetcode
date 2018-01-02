@@ -10,7 +10,7 @@ describe('romanToInt()', function() {
     {args: ['LXXXIX'], expected: 89 }
   ];
   tests.forEach(function(test) {
-    it(`Correctly returns base 10 version of Roman Numeral ${test.args}`, function() {
+    it(`Correctly returns base 10 tranform of Roman Numeral ${test.args}`, function() {
       const res = romanToInt(test.args);
       expect(res).to.equal(test.expected);
     });

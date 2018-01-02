@@ -14,7 +14,7 @@ describe('longestCommonPrefix()', function() {
   ];
 
   tests.forEach(function(test) {
-    it(`correctly checks ${test.args} is a Palindrome`, function() {
+    it(`correctly checks ${test.args} for the longest matching common prefix`, function() {
       const res = longestCommonPrefix(...[test.args]);
       expect(res).to.equal(test.expected);
     });

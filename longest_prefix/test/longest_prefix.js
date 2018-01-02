@@ -11,7 +11,7 @@ const longestCommonPrefix = (strs) => {
     return strs[0];
   }
 
-  // sort the array of strings by length, find the shortest string that is the max character match
+  // sort the array of strings by length, find the shortest string that is the max character match length
 
   const arr = strs;
   arr.sort((a, b) => a.length - b.length);
@@ -24,7 +24,7 @@ const longestCommonPrefix = (strs) => {
   // contained in consecutive arrays
 
   // if it hits the last array and that character in the last array matches the same character in
-  // the first array all have matched and that is your new longest prefix match
+  // the first array all have matched and that is the new longest prefix match
 
   for (let j = 0; j < Len; j++) {
     for (let i = 1; i < arr.length; i++) {
@@ -46,11 +46,3 @@ const longestCommonPrefix = (strs) => {
 longestCommonPrefix(['abcde', 'abccde', 'abcdghf']);
 
 module.exports = longestCommonPrefix;
-
-// some test data
-// Try: ["a"] or ["c", "c"] or ["abca", "abc"]   [""] = ""    ["a"]
-// ["a","a","b"]      ["ab","abc","ab"]     ["aa","ab"]
-// ["flower","flow","flight"]
-// ["ca","a"]   exp  ""
-// ["c", "c"]   exp  "c"
-// ["abca","aba","aaab"]

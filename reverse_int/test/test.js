@@ -10,7 +10,7 @@ describe('reverse()', function() {
   ];
   tests.forEach(function(test) {
     it(`correctly reverses ${test.args}`, function() {
-      const res = reverse(...[test.args]);
+      const res = reverse(test.args);
       expect(res).to.equal(test.expected);
     });
   });
