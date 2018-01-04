@@ -3,7 +3,7 @@
  * @return {string}
  */
 const longestCommonPrefix = (strs) => {
-  if (strs === [''] || '' || null || undefined || (strs.length === 0) || (strs[0] === '') || (strs[0] === ['']) || (strs[0].length === 0)) {
+  if (!strs || (strs.length === 0)) {
     return '';
   }
 
@@ -22,15 +22,14 @@ const longestCommonPrefix = (strs) => {
   // cycle through twice, i is current input string from the array of strings, j is the character
   // in each array; i is second loop below, to check a single character in the array then check
   // contained in consecutive arrays
-
-  // if it hits the last array and that character in the last array matches the same character in
+  // If it reaches the last array and that character in the last array matches the same character in
   // the first array all have matched and that is the new longest prefix match
 
   for (let j = 0; j < Len; j++) {
     for (let i = 1; i < arr.length; i++) {
       if ((i === arr.length - 1) && (arr[0][j] === arr[i][j])) {
         mtchStr += arr[i][j];
-        // console.log(mtchStr);
+        console.log(mtchStr);
       }
       if (arr[0][j] !== arr[i][j]) {
         console.log(mtchStr);

@@ -130,5 +130,8 @@ const romanToInt = (s) => {
 
 romanToInt('XXX');
 
+// code looks like could be improved, but actually runs extremely efficiently
+// faster than 86% of solutions!
+
 // for testing
 module.exports = romanToInt;

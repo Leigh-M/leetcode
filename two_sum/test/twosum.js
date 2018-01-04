@@ -18,7 +18,7 @@ const twoSum = (nums, target) => {
   }
 };
 
-// console.log(twoSum([2, 4, 7, 9], 11));
+console.log(twoSum([2, 4, 7, 9], 11));
 
 // for testing
 module.exports = twoSum;
