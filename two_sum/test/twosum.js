@@ -2,11 +2,11 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
+ *
+ * Accepts an array of numbers as first arg and target number as second
+ * If target feasible by sum of two values in input array return an array
+ * containing the two indexes
  */
-
-// accepts an array of numbers as first arg and target number as second
-// if target feasible by sum of two values in input array return
-// the two indexes
 
 const twoSum = (nums, target) => {
   for (let i = 0; i < nums.length; i++) {

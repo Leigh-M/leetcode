@@ -1,7 +1,5 @@
-/**
- * @param {number} x
- * @return {number}
- */
+// Commenting on function in test folder
+
 const reverse = (x) => {
   let arr = x.toString().split('');
   arr.reverse();

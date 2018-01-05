@@ -1,4 +1,8 @@
 /**
+ * Check the 'order' or length of the number base 10, check each first digit matches the
+ * last digit, if they do not match return false, if they do, remove them both and check
+ * again++ if they all match return true
+ *
  * @param {number} x
  * @return {boolean}
  */

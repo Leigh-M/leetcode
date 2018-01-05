@@ -1,7 +1,12 @@
 /**
  * @param {string[]} strs
  * @return {string}
+ *
+ * Accepts an array of strings, returns the longest prefix matching each entry in the array,
+ * V1 starts with character 1, array index 0, and checks each string in the array, if it reaches
+ * the end of the array they were all a match, add to mtchStr, try the next character++
  */
+
 const longestCommonPrefix = (strs) => {
   if (!strs || (strs.length === 0)) {
     return '';

@@ -1,11 +1,9 @@
 /**
-
-Given a roman numeral, convert it to an integer.
-
-Input is guaranteed to be within the range from 1 to 3999 = MMMCMXCIX
-
  * @param {string} s
  * @return {number}
+ *
+ * Given a roman numeral as a string, convert it to an integer
+ * Input is guaranteed to be within the range from 1 to 3999 = MMMCMXCIX
  */
 
 const romanToInt = (s) => {
@@ -131,7 +129,7 @@ const romanToInt = (s) => {
 romanToInt('XXX');
 
 // code looks like could be improved, but actually runs extremely efficiently
-// faster than 86% of solutions!
+// faster than 86% of answers
 
 // for testing
 module.exports = romanToInt;

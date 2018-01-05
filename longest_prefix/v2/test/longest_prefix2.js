@@ -1,7 +1,13 @@
 /**
+ * Accepts an array of strings, returns the longest common prefix match
+ * V2 works in reverse from V1: sort the array, check for a match of the shortest entry in the
+ * array in each consecutive string sliced at that length, if not a match, slice a character
+ * less and loop--
+ *
  * @param {string[]} strs
  * @return {string}
  */
+
 const longestCommonPrefix = (strs) => {
   if (!strs || (strs.length === 0)) {
     return '';

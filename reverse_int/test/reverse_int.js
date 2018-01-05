@@ -1,7 +1,10 @@
 /**
+ * Reverses signed integers
+
  * @param {number} x
  * @return {number}
  */
+
 const reverse = (x) => {
   let arr = x.toString().split('');
   arr.reverse();

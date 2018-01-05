@@ -1,7 +1,4 @@
-/**
- * @param {number} x
- * @return {boolean}
- */
+// functional comments in test folder
 
 const isPalindrome = (x) => {
   let X = x;

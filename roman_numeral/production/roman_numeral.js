@@ -1,12 +1,4 @@
-/**
-
-Given a roman numeral, convert it to an integer.
-
-Input is guaranteed to be within the range from 1 to 3999 = MMMCMXCIX
-
- * @param {string} s
- * @return {number}
- */
+// Commenting on function in test folder
 
 const romanToInt = (s) => {
   let Str = String(s);

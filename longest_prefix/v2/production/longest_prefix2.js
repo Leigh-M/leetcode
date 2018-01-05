@@ -1,7 +1,5 @@
-/**
- * @param {string[]} strs
- * @return {string}
- */
+// function comments in test folder
+
 const longestCommonPrefix = (strs) => {
   if (!strs || (strs.length === 0)) {
     return '';
