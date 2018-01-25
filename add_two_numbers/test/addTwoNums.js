@@ -1,6 +1,4 @@
 /**
- *   IN PROGRESS - not complete
- *
 You are given two non-empty linked lists representing two non-negative integers. The digits are
 stored in reverse order and each of their nodes contain a single digit. Add the two numbers and
 return it as a linked list.
@@ -24,10 +22,21 @@ Explanation: 342 + 465 = 807
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
-    
+const addTwoNumbers = function addTwoNumbers(l1, l2) {
+  // Calls rev function on each input ListNode, reverses, joins and returns a string of digits
+  const rev = function rev(x) {
+    const str = x.reverse().join('');
+    return str;
+  };
+  // parses string of digits returned by rev, base 10 and adds them
+  const res1 = parseInt(rev(l1), 10) + parseInt(rev(l2), 10);
+  // stringifies, to array and reverses, then translates each string digit in array to an integer
+  const tot = (res1.toString().split('')).reverse().map(x => parseInt(x, 10));
+
+  console.log(tot);
+  return tot;
 };
 
-longestCommonPrefix(["abca","abc"]);
+addTwoNumbers([2, 4, 3], [5, 6, 4]);
 
-module.exports = longestCommonPrefix;
+module.exports = addTwoNumbers;

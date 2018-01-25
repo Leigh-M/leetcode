@@ -1,24 +1,15 @@
 const expect = require('chai').expect;
-const longestCommonPrefix = require('./longest_prefix2.js');
+const addTwoNumbers = require('./addTwoNums.js');
 
-describe('longestCommonPrefix()', function() {
+describe('addTwoNumbers()', function(){
   const tests = [
-    {args: ["a", "a"], expected: "a" },
-    {args: [], expected: "" },
-    {args: ["abca", "abc"], expected: "abc" },
-    {args: ["a"], expected: "a" },
-    {args: ["a", "a", "b"], expected: "" },
-    {args: ["ab", "abc", "ab"], expected: "ab" },
-    {args: ["flower", "flow", "flight"], expected: "fl" },
-    {args: ["ca", "a"], expected: "" },
-    {args: ["abca", "aba", "aaab"], expected: "a" },
-    {args: ["abab","aba","abc"], expected: "ab" }
+   {args: [[2, 4, 3], [5, 6, 4]], expected: [7, 0, 8] }
   ];
-
   tests.forEach(function(test) {
-    it(`correctly checks ${test.args} for the longest matching common prefix`, function() {
-      const res = longestCommonPrefix(...[test.args]);
-      expect(res).to.equal(test.expected);
+    it(`correctly reverses two linked lists ${test.args[0]} and ${test.args[1]}, stringifies & adds them, reverses the output integer and returns a LinkedNode List in the form of an array`, function() {
+      const res = addTwoNumbers(...test.args);
+      // eql will loosely match, not the same array object
+      expect(res).to.eql(test.expected);
     });
   });
 });
