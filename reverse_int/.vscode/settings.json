@@ -1,0 +1,3 @@
+{
+  "mocha.options": {"mocha.files.glob": "test/**/*.js"}
+}

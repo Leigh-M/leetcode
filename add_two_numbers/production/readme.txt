@@ -1,0 +1,1 @@
+AddTwoNums works for large numbers (over 53 bits), accepts two ListNodes as Singly Linked Lists, stores as arrays, reverses them, and works with string representations and sums each individual array value with corresponding, using carry and accumulator to create string representation of sum, reverses the array again and returns
