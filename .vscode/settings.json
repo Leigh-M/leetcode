@@ -1,0 +1,5 @@
+// {"mocha.files.glob": "/home/leigh/node/leetcode/**/**/test.js"}
+
+{
+  "mocha.files.glob": "**/test/test.js"
+}

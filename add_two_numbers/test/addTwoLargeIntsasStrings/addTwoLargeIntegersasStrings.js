@@ -28,4 +28,3 @@ const sumStrings = function sumStrings(a, b) {
 console.log(sumStrings('4999999999888888887777777', '6999999999888888887777777'));
 
 module.exports = sumStrings;
-module.exports = addition;

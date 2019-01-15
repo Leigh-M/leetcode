@@ -1,5 +1,5 @@
 /*
- * Reads in two singly-link lists as a ListNodes, calls getArr first which calls AddTwoNums and
+ * Reads in two singly-link lists as a ListNodes, calls getArr intially which calls AddTwoNums and
  * converts ListNodes to arrays
  * rev reverses them and joins as strings - Linkedin and other APIs use strings for large numbers
  * this provides a hook to work with those APIs
@@ -63,3 +63,15 @@ const addTwoNumbers = (l1, l2) => {
   }
   return (sumStrings(revStr1, revStr2).split('').reverse().map(x => parseInt(x, 10)));
 };
+
+
+const Lis1 = { data: '1', next: {
+  data: '2', next: {
+                   data: '3', next: null }}};
+
+
+const Lis2 = { data: '4', next: {
+  data: '6', next: {
+                   data: '8', next: null }}};      
+
+console.log(addTwoNumbers(Lis1, Lis2));

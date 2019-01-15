@@ -1,2 +1,2 @@
-{"mocha.options": {"mocha.files.glob": "test/**/*.js"}
+{"mocha.options": {"mocha.files.glob": "/home/leigh/node/leetcode/**/test/**/*.js"}
 }
