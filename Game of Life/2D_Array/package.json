@@ -1,0 +1,21 @@
+{
+  "name": "game_of_life_2d_array_canvas_version",
+  "version": "0.2.0",
+  "description": "Conways Game of Life simulation as 2D array in Canvas",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Conways Game of Life",
+    "canvas",
+    "JavaScript",
+    "ES6"
+  ],
+  "author": "Leigh Mathieson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+<title>Life</title>
+</head>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.5/pixi.js"></script>
+<script>
+  //Aliases
+  let Application = PIXI.Application,
+      Container = PIXI.Container;
+
+  //Create app
+  let app = new Application(
+    {
+      width: 100, 
+      height: 100,                       
+      antialiasing: true, 
+      transparent: false, 
+      resolution: 1
+    }
+  );
+
+  //Add the canvas
+  document.body.appendChild(app.view);
+
+  function setup() {
+    life = new Container();
+    app.stage.addChild(life);
+  
+    // set up assets
+    sky = new Sprite(id["Backgrd.png"]);
+    gameScene.addChild(sky);
+
+    //Set the game state
+    state = play;
+  
+    //Start the game loop 
+    app.ticker.add(delta => gameLoop(delta));
+  }
+  
+  function gameLoop(delta) {
+    state(delta);
+  }
+  
+  function play() {
+   
+    }
+
+</script>
+</script>
+</body>
+</html>
