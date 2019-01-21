@@ -16,6 +16,8 @@
   "author": "Leigh Mathieson",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0"
   }
 }
