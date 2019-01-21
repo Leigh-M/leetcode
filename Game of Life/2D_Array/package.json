@@ -19,5 +19,9 @@
     "chai": "^4.2.0",
     "express": "^4.16.4",
     "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
   }
 }
