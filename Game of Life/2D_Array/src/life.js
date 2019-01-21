@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-// copy required to iterate over and mutate array, 3x faster than JSON.stringify(JSON.parse(orig))
+// copy required to iterate over and mutate grid, 3x faster than JSON.stringify(JSON.parse(orig))
 function deepCopy(p, c) {
   c = c || [];
   for (const [index, value] of p.entries()) {
