@@ -33,4 +33,4 @@ function timeTicker() {
 
 console.log(timeTicker());
 // approx 1000ms on my machine for 15 cycles: 15fps not including draw function
-// for 1000 x 1000 grid
+// for large 1000 x 1000 grid
