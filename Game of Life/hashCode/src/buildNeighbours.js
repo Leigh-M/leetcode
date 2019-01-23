@@ -46,10 +46,3 @@ function buildNeighbours(liveCells, neighbours, rows, cols) {
 }
 
 module.exports = buildNeighbours;
-
-/*
-const neighbours = new Map();
-const liveCells = [[2, 2], [2, 3], [2, 4]];
-buildNeighbours(liveCells, neighbours, 6, 6);
-console.log(neighbours);
-*/
