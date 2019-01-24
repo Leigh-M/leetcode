@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "webpack --mode development"
   },
   "keywords": [
     "Conways Game of Life",

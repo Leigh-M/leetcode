@@ -2,7 +2,7 @@
 const hashKey = require('./hashKey');
 
 // rules, assume all dead except for 2 cases
-function survives(cell, liveCells, nextCells) {
+function survives(cell, nextCells) {
   return nextCells.push(cell);
 }
 

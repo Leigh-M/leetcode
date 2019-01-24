@@ -15,10 +15,10 @@ function createGrid(rows, cols) {
   return grd;
 }
 
-const grid = createGrid(300, 300);
+const grid = createGrid(100, 100);
 
 function draw() {
-  ctx.clearRect(0, 0, 300, 300);
+  ctx.clearRect(0, 0, 100, 100);
   life(grid);
   ctx.fillStyle = '#101010';
   for (let i = 0; i < grid.length; i++) {

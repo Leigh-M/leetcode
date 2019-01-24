@@ -7,10 +7,12 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:3000/index.html",
-      "webRoot": "${workspaceFolder}/public",
-      "skipFiles": ["pixi.min.js"]
+      "name": "Launch Chrome on localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/",
+      "breakOnLoad": true,
+      "sourceMaps": true,
+      "skipFiles": ["react-dom.development.js"]
     }
   ]
 }

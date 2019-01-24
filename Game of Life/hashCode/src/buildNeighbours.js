@@ -7,7 +7,8 @@ function checkKey(coords, neighbours) {
     count: 1, coords });
 }
 
-function buildNeighbours(liveCells, neighbours, rows, cols) {
+function buildNeighbours(liveCells, rows, cols) {
+  const neighbours = new Map();
   liveCells.forEach((item) => {
     // find neighbours
     const x = item[0], y = item[1];
@@ -43,6 +44,7 @@ function buildNeighbours(liveCells, neighbours, rows, cols) {
       checkKey([x, y + 1], neighbours);
     }
   });
+  return neighbours;
 }
 
 module.exports = buildNeighbours;

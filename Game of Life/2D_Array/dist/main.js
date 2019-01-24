@@ -1,1 +1,111 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){const r=n(1),o=document.getElementById("life").getContext("2d");const u=function(e,t){const n=[];for(let r=0;r<e;r++){n[r]=[];for(let e=0;e<t;e++)n[r][e]=Math.round(Math.random())}return n}(300,300);function l(){o.clearRect(0,0,300,300),r(u),o.fillStyle="#101010";for(let e=0;e<u.length;e++)for(let t=0;t<u[0].length;t++)1===u[e][t]&&o.fillRect(e,t,1,1);requestAnimationFrame(l)}requestAnimationFrame(l),e.exports=l},function(e,t){e.exports=function(e){const t=function e(t,n){n=n||[];for(const[r,o]of t.entries())Array.isArray(o)?(n[r]=[],e(o,n[r])):n.push(o);return n}(e),n=e[0].length,r=e.length;let o=0;for(let u=0;u<r;u++)for(let l=0;l<n;l++)o=0,u-1>=0&&l-1>=0&&1===t[u-1][l-1]&&o++,u+1<r&&l+1<n&&1===t[u+1][l+1]&&o++,u-1>=0&&l+1<n&&1===t[u-1][l+1]&&o++,u+1<r&&l-1>=0&&1===t[u+1][l-1]&&o++,l-1>=0&&1===t[u][l-1]&&o++,u-1>=0&&1===t[u-1][l]&&o++,u+1<r&&1===t[u+1][l]&&o++,l+1<n&&1===t[u][l+1]&&o++,1===t[u][l]&&(e[u][l]=o>=2&&o<=3?1:0),0===t[u][l]&&3===o&&(e[u][l]=1);return e}}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* eslint-env browser */\nconst life = __webpack_require__(/*! ./life.js */ \"./src/life.js\");\n\nconst canv = document.getElementById('life');\nconst ctx = canv.getContext('2d');\n\nfunction createGrid(rows, cols) {\n  const grd = [];\n  for (let i = 0; i < rows; i++) {\n    grd[i] = [];\n    for (let j = 0; j < cols; j++) {\n      grd[i][j] = Math.round(Math.random());\n    }\n  }\n  return grd;\n}\n\nconst grid = createGrid(300, 300);\n\nfunction draw() {\n  ctx.clearRect(0, 0, 300, 300);\n  life(grid);\n  ctx.fillStyle = '#101010';\n  for (let i = 0; i < grid.length; i++) {\n    for (let j = 0; j < grid[0].length; j++) {\n      if (grid[i][j] === 1) {\n        ctx.fillRect(i, j, 1, 1);\n      }\n    }\n  }\n  requestAnimationFrame(draw);\n}\n\nrequestAnimationFrame(draw);\n\n// to test draw function\nmodule.exports = draw;\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/life.js":
+/*!*********************!*\
+  !*** ./src/life.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* eslint-env browser */\n\n// copy required to iterate over and mutate grid, 3x faster than JSON.stringify(JSON.parse(ar))\nfunction deepCopy(p, c) {\n  c = c || [];\n  for (const [index, value] of p.entries()) {\n    if (Array.isArray(value)) {\n      c[index] = [];\n      deepCopy(value, c[index]);\n    } else c.push(value);\n  }\n  return c;\n}\n\nfunction life(grd) {\n  const copy = deepCopy(grd);\n  const cols = grd[0].length;\n  const rows = grd.length;\n  let count = 0;\n  for (let i = 0; i < rows; i++) {\n    for (let j = 0; j < cols; j++) {\n      count = 0;\n      // Without wrapping, includes edges but not off-canvas\n      if (i - 1 >= 0 && j - 1 >= 0) {\n        if (copy[i - 1][j - 1] === 1) count++;\n      }\n      if (i + 1 < rows && j + 1 < cols) {\n        if (copy[i + 1][j + 1] === 1) count++;\n      }\n      if (i - 1 >= 0 && j + 1 < cols) {\n        if (copy[i - 1][j + 1] === 1) count++;\n      }\n      if (i + 1 < rows && j - 1 >= 0) {\n        if (copy[i + 1][j - 1] === 1) count++;\n      }\n      if (j - 1 >= 0) {\n        if (copy[i][j - 1] === 1) count++;\n      }\n      if (i - 1 >= 0) {\n        if (copy[i - 1][j] === 1) count++;\n      }\n      if (i + 1 < rows) {\n        if (copy[i + 1][j] === 1) count++;\n      }\n      if (j + 1 < cols) {\n        if (copy[i][j + 1] === 1) count++;\n      }\n      if (copy[i][j] === 1) {\n        grd[i][j] = (count >= 2 && count <= 3) ? 1 : 0;\n      }\n      if (copy[i][j] === 0) {\n        if (count === 3) grd[i][j] = 1;\n      }\n    }\n  }\n  return grd;\n}\n\nmodule.exports = life;\n\n\n//# sourceURL=webpack:///./src/life.js?");
+
+/***/ })
+
+/******/ });

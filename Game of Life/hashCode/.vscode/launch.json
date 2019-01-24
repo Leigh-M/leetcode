@@ -17,16 +17,18 @@
         "--colors",
         "${workspaceFolder}/test/test.js"
       ],
-      "skipFiles": ["mocha.js", "tdd.js", "bdd.js", "suite.js", "*/lib/test.js", "runnable.js", "utils.js", "debug.js", "events.js", "common.js", "loader.js", "loaders.js", "helpers.js", "runner.js", "spec.js", "base.js", "console.js", "main_thread_only.js", "util.js", "_stream_readable.js", "_stream_writable.js", "timers.js", "_mocha.js", "next_tick.js", "node.js", "async_hooks.js", "types.js", "net.js", "inspector_async_hook.js", "_mocha", "stream_base_commons.js", "fixed_queue.js", "promise.js", "context.js", "promises.js"],
+      "skipFiles": ["mocha.js", "tdd.js", "bdd.js", "suite.js", "*/lib/test.js", "runnable.js", "utils.js", "debug.js", "events.js", "common.js", "loader.js", "loaders.js", "helpers.js", "runner.js", "spec.js", "base.js", "console.js", "main_thread_only.js", "util.js", "_stream_readable.js", "_stream_writable.js", "timers.js", "_mocha.js", "next_tick.js", "node.js", "async_hooks.js", "types.js", "net.js", "inspector_async_hook.js", "_mocha", "stream_base_commons.js", "fixed_queue.js", "promise.js", "context.js", "promises.js", "main.js"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:3000/index.html",
-      "webRoot": "${workspaceFolder}/public",
-      "skipFiles": ["pixi.min.js"]
+      "name": "Launch Chrome on localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/",
+      "breakOnLoad": true,
+      "sourceMaps": true,
+      "skipFiles": ["react-dom.development.js"]
     }
   ]
 }

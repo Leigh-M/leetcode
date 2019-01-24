@@ -1,24 +1,40 @@
 /* eslint-env browser */
 const life = require('./life');
-// const draw = require('./draw');
 const buildNeighbours = require('./buildNeighbours');
+const populate = require('../src/populate');
 
-// const canv = document.getElementById('life');
-// const ctx = canv.getContext('2d');
+const canv = document.getElementById('life');
+const ctx = canv.getContext('2d');
 
-// set grid size and initial
-const rows = 10;
-const cols = 10;
-// const seedCells = [[2, 2], [2, 4], [3, 4], [3, 3], [4, 4], [0, 1], [0, 2]];
-// const seedCells = [[0, 1], [1, 1], [2, 1]];
+// let liveCells = populate(5, 5);
+// acorn
 
-const seedCells = [[3, 0], [1, 1], [4, 1], [2, 2], [4, 3], [0, 4], [2, 4], [4, 4]];
+let liveCells = [[100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100]];
 
-const neighbours = new Map();
-buildNeighbours(seedCells, neighbours, rows, cols);
+function draw() {
+  ctx.clearRect(0, 0, 200, 200);
+  const neighbours = buildNeighbours(liveCells, 200, 200);
+  liveCells = life(liveCells, neighbours);
+  ctx.fillStyle = '#101010';
+  for (let i = 0; i < liveCells.length; i++) {
+    ctx.fillRect(liveCells[i][0], liveCells[i][1], 1, 1);
+  }
+  requestAnimationFrame(draw);
+}
 
-console.log(life(seedCells, neighbours));
+requestAnimationFrame(draw);
 
+/*
+function draw() {
+  ctx.clearRect(0, 0, 500, 500);
+  liveCells = life(liveCells, neighbours);
+  neighbours = buildNeighbours(liveCells, 100, 100);
+  ctx.fillStyle = '#101010';
+  for (let i = 0; i < liveCells.length; i++) {
+    ctx.fillRect(liveCells[i][0], liveCells[i][1], 1, 1);
+  }
+  requestAnimationFrame(draw);
+}
 
-// requestAnimationFrame(draw(ctx));
-// to test draw function
+// requestAnimationFrame(draw);
+*/
