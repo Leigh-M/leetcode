@@ -1,19 +1,22 @@
 /* eslint-env browser */
 const buildLiveHash = require('./buildLiveHash');
-// const buildNeighbours = require('./buildNeighbours');
+const buildNeighboursHash = require('./buildNeighboursHash');
 // const life = require('./life');
 
 // const canv = document.getElementById('life');
 // const ctx = canv.getContext('2d');
 
 // 'acorn' seed
-let liveCells = [
+const seed = [
   [100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100],
 ];
+const neighbours = new Map();
 
 // max display size
-// const rows = 100;
-// const cols = 100;
+const rows = 100;
+const cols = 100;
 
-liveCells = buildLiveHash(liveCells);
-console.log(liveCells);
+let live = buildLiveHash(seed);
+let neighs = buildNeighboursHash(live, neighbours, rows, cols);
+
+console.log(neighs);
