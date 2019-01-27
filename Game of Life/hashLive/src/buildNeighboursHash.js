@@ -1,5 +1,4 @@
 /* eslint-env browser */
-// Leetcode instructions to return initial array hence intentionally mutating liveCells param:
 /* eslint-disable no-param-reassign */
 
 const hashKey = require('./hashKey');
@@ -13,45 +12,49 @@ function setKey(key, neighbours, coords) {
 }
 
 function buildNeighboursHash(liveCells, neighbours, rows, cols) {
-  liveCells.forEach((item, index) => {
+  const live = liveCells;
+  const neighs = neighbours;
+  live.forEach((item) => {
     // find neighbours
     const x = item.coords[0];
     const y = item.coords[1];
+    let key = hashKey([x, y]);
+    if (!neighs.has(key)) neighs.set(key, { count: 0, coords: [x, y] });
     // ensure within display border
     if (x - 1 >= 0) {
-      const key = hashKey([x - 1, y]);
-      setKey(key, neighbours, [x - 1, y]);
+      key = hashKey([x - 1, y]);
+      setKey(key, neighs, [x - 1, y]);
     }
     if (x - 1 >= 0 && y - 1 >= 0) {
-      const key = hashKey([x - 1, y - 1]);
-      setKey(key, neighbours, [x - 1, y - 1]);
+      key = hashKey([x - 1, y - 1]);
+      setKey(key, neighs, [x - 1, y - 1]);
     }
     if (y - 1 >= 0) {
-      const key = hashKey([x, y - 1]);
-      setKey(key, neighbours, [x, y - 1]);
+      key = hashKey([x, y - 1]);
+      setKey(key, neighs, [x, y - 1]);
     }
     if (x + 1 < rows && y - 1 >= 0) {
-      const key = hashKey([x + 1, y - 1]);
-      setKey(key, neighbours, [x + 1, y - 1]);
+      key = hashKey([x + 1, y - 1]);
+      setKey(key, neighs, [x + 1, y - 1]);
     }
     if (x + 1 < rows) {
-      const key = hashKey([x + 1, y]);
-      setKey(key, neighbours, [x + 1, y]);
+      key = hashKey([x + 1, y]);
+      setKey(key, neighs, [x + 1, y]);
     }
     if (x + 1 < rows && y + 1 < cols) {
-      const key = hashKey([x + 1, y + 1]);
-      setKey(key, neighbours, [x + 1, y + 1]);
+      key = hashKey([x + 1, y + 1]);
+      setKey(key, neighs, [x + 1, y + 1]);
     }
     if (y + 1 < cols) {
-      const key = hashKey([x, y + 1]);
-      setKey(key, neighbours, [x, y + 1]);
+      key = hashKey([x, y + 1]);
+      setKey(key, neighs, [x, y + 1]);
     }
     if (x - 1 >= 0 && y + 1 < cols) {
-      const key = hashKey([x - 1, y + 1]);
-      setKey(key, neighbours, [x - 1, y + 1]);
+      key = hashKey([x - 1, y + 1]);
+      setKey(key, neighs, [x - 1, y + 1]);
     }
   });
-  return neighbours;
+  return neighs;
 }
 
 module.exports = buildNeighboursHash;

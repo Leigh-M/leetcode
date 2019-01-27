@@ -8,26 +8,20 @@ const ctx = canv.getContext('2d');
 ctx.fillStyle = '#101010';
 
 // 'acorn' seed
-
 const seed = [
   [100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100],
 ];
-
-/*
-const seed = [
-  [2, 4], [3, 4], [4, 4]];
-*/
 
 // max display size
 const rows = 200;
 const cols = 200;
 
-const liveCells = buildLiveHash(seed);
+let liveCells = buildLiveHash(seed);
 let neighbours = new Map();
 
 function draw() {
   neighbours = buildNeighboursHash(liveCells, neighbours, rows, cols);
-  life(liveCells, neighbours);
+  liveCells = life(liveCells, neighbours);
   ctx.clearRect(0, 0, 200, 200);
   liveCells.forEach((item) => {
     ctx.fillRect(item.coords[0], item.coords[1], 1, 1);

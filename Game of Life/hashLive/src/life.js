@@ -1,51 +1,56 @@
-// for unit testing, no return required for this design, survivors remain in Map
-// function still necessary to remove 'live' cells from neighbours hash
-function survive(index, live, neighbours) {
-  if (neighbours.has(index)) {
-    if (neighbours.get(index).count === 2 || neighbours.has(index).count === 3) {
-      // remove from neighbours hash, those eventually left will be non-live cells
-      neighbours.delete(index);
-      return true;
-    }
-  }
-  return false;
+function survive(index, liveCells, neighbours) {
+  const live = liveCells;
+  const neighs = neighbours;
+  neighs.delete(index);
+  return { live, neighs };
 }
 
-function overCrowded(index, live, neighbours) {
-  if (neighbours.has(index)) {
-    if (neighbours.get(index).count > 3) {
-      live.delete(index);
-      // remove from neighbours, remainder are non-live cells
-      neighbours.delete(index);
-    }
-  }
+function overCrowded(index, liveCells, neighbours) {
+  const live = liveCells;
+  const neighs = neighbours;
+  live.delete(index);
+  neighs.delete(index);
+  return { live, neighs };
 }
 
-function lonely(index, live, neighbours) {
-  if (neighbours.has(index)) {
-    if (neighbours.get(index).count < 2) {
-      live.delete(index);
-      // remove from neighbours, remainder are non-live cells
-      neighbours.delete(index);
-    }
-  }
+function lonely(index, liveCells, neighbours) {
+  const live = liveCells;
+  const neighs = neighbours;
+  live.delete(index);
+  neighs.delete(index);
+  return { live, neighs };
 }
 
-function life(live, neighbours) {
+function life(liveCells, neighbours) {
+  let live = liveCells;
+  let neighs = neighbours;
   live.forEach((item, index) => {
-    survive(index, live, neighbours);
-    overCrowded(index, live, neighbours);
-    lonely(index, live, neighbours);
+    if (neighs.has(index)) {
+      if (neighs.get(index).count < 2) {
+        ({ live, neighs } = lonely(index, live, neighs));
+      }
+      if (neighs.has(index)) {
+        if (neighs.get(index).count === 2 || (neighs.get(index).count === 3)) {
+          ({ live, neighs } = survive(index, live, neighs));
+        }
+      }
+      if (neighs.has(index)) {
+        if (neighs.get(index).count > 3) {
+          ({ live, neighs } = overCrowded(index, live, neighs));
+        }
+      }
+    }
+    return null;
   });
 
-  neighbours.forEach((item, index) => {
+  neighs.forEach((item, index) => {
     if (item.count === 3) {
       live.set(index, { coords: item.coords });
     }
   });
-
-  // clear hash for next cycle
-  neighbours.clear();
+  // clear neighbours Map for next cycle
+  neighs.clear();
+  return live;
 }
 
 module.exports = life;
