@@ -14,11 +14,11 @@ function setKey(key, neighbours, coords) {
 function buildNeighboursHash(liveCells, neighbours, rows, cols) {
   const live = liveCells;
   const neighs = neighbours;
-  live.forEach((item) => {
+  live.forEach((item, index) => {
     // find neighbours
     const x = item.coords[0];
     const y = item.coords[1];
-    let key = hashKey([x, y]);
+    let key = index;
     if (!neighs.has(key)) neighs.set(key, { count: 0, coords: [x, y] });
     // ensure within display border
     if (x - 1 >= 0) {
