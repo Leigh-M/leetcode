@@ -13,6 +13,8 @@ function overCrowded(index, liveCells, neighbours) {
   return { live, neighs };
 }
 
+// performs identically to overCrowded, could implement different rules other than Conway
+// hence included. Also for testing purposes, but could be replaced by liveCellDies()
 function lonely(index, liveCells, neighbours) {
   const live = liveCells;
   const neighs = neighbours;
@@ -43,6 +45,7 @@ function life(liveCells, neighbours) {
     return null;
   });
 
+  // any remaining cells with count 3 must currently not be live, set live in Map
   neighs.forEach((item, index) => {
     if (item.count === 3) {
       live.set(index, { coords: item.coords });
@@ -53,5 +56,6 @@ function life(liveCells, neighbours) {
   return live;
 }
 
-module.exports = life;
-
+module.exports = {
+  life, survive, overCrowded, lonely,
+};
