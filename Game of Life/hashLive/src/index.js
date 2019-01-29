@@ -1,7 +1,9 @@
 /* eslint-env browser */
+// view readme.md for usage/ design notes
+
 const buildLiveHash = require('./buildLiveHash');
 const buildNeighboursHash = require('./buildNeighboursHash');
-const life = require('./life');
+const { life } = require('./life');
 
 const canv = document.getElementById('life');
 const ctx = canv.getContext('2d');
@@ -28,5 +30,6 @@ function draw() {
   });
   requestAnimationFrame(draw);
 }
+
 
 requestAnimationFrame(draw);
