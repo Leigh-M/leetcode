@@ -16,17 +16,17 @@ Webpacked output files in /dist folder, index.html and main.js
 
 ### tests
 Unit tests in Mocha chai
-Full 'life()' test completing 4 generations on acorn seed
+
+Full 'life()' test with 4 generations of acorn seed
 
 Test coverage: instanbul/ nyc with npm run test
 
 ### Hash function:
-A 'spacial hash' was used, ie coord, [2,4] -> '2,4' as key in the Map, with an object including the count of neighbouring adjacent cells and initial coords array as value. Coords necessary to compute the next iteration, of adjacent cells, ie x - 1, y - 1, etc for the 8 neighbouring cells. Could do some more testing on hash functions that map to integers for speed although. 
+A 'spacial hash' was used, ie coord, [2,4] -> '2,4' as key in the Map, with an object including the count of neighbouring adjacent cells and initial coords array as value. Coords necessary to compute the next iteration, of adjacent cells, ie x - 1, y - 1, etc for the 8 neighbouring cells. Could do some more testing on hash functions that map to integers for speed. 
 
-Technically this step is not required as ES2015 Maps convert arrays as keys to string values under the hood, I opted to force the key using my own hash function as may wish to change the hash function to another using prime numbers as part of performance testing for optimization. eg Horner's method and multiply by H = 31 (below) and array length as a large prime number. 
+Technically could circumvent this step as ES2015 Maps convert arrays-as-keys to string values under the hood, I opted to force the key using my own hash function as may wish to change the hash function to another using prime numbers as part of performance testing for optimization. eg Horner's method and multiply by H = 31 (below) and array length as a large prime number. 
 
 Although this function itself is more expensive than the spacial array conversion, more testing is required with different hash functions to check Map performance with integers as keys versus strings as keys for definitive answer
-
 
 function hashToInteger(string, arr) {
   let H = 31;
@@ -42,19 +42,19 @@ function hashToInteger(string, arr) {
 function setKey(str, arry) {
   let key = hashToInteger(str, arry)
   let index = 0;
+  // check no collision
   if (arry[key] === undefined) {
     arry[key] = key;
-    return key;
   } else {
     while (arry[key] !== undefined) {
       key++;
     }
     arry[key] = key;
-    return key;
   }
+  return key;
 }
 
-let myArr = new Array(1000);
+const myArr = new Array(1000);
 
 // check collision logic
 console.log(setKey('ff', myArr));
