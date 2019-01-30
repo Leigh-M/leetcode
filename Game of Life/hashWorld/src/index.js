@@ -1,23 +1,23 @@
 /* eslint-env browser */
 // view readme.md for usage/ design notes
-
-const buildLiveHash = require('./buildLiveHash');
-const buildNeighboursHash = require('./buildNeighboursHash');
+const { createEmptyWorld, setSeed, createWorldHash } = require('./createWorld');
 const { life } = require('./life');
 
-const canv = document.getElementById('life');
-const ctx = canv.getContext('2d');
-ctx.fillStyle = '#101010';
+// const canv = document.getElementById('life');
+// const ctx = canv.getContext('2d');
+// ctx.fillStyle = '#101010';
 
-// 'acorn' seed
+const world = createEmptyWorld(10, 10);
 const seed = [
-  [100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100],
+  [1, 3], [2, 2], [3, 4],
 ];
+const seeded = setSeed(seed, world);
+const worldHash = createWorldHash(seeded);
 
-// max display size
-const rows = 200;
-const cols = 200;
+console.log(seeded);
 
+
+/*
 let liveCells = buildLiveHash(seed);
 let neighbours = new Map();
 
@@ -30,6 +30,5 @@ function draw() {
   });
   requestAnimationFrame(draw);
 }
-
-
 requestAnimationFrame(draw);
+*/
