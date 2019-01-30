@@ -1,6 +1,7 @@
 /* eslint-env browser */
 // view readme.md for usage/ design notes
-const { createEmptyWorld, setSeed, createWorldHash } = require('./createWorld');
+const { createEmptyWorld, setSeed } = require('./createWorld');
+const createWorldHash = require('./createWorldHash');
 const { life } = require('./life');
 
 // const canv = document.getElementById('life');
@@ -14,8 +15,7 @@ const seed = [
 const seeded = setSeed(seed, world);
 const worldHash = createWorldHash(seeded);
 
-console.log(seeded);
-
+console.log(worldHash);
 
 /*
 let liveCells = buildLiveHash(seed);
@@ -32,3 +32,9 @@ function draw() {
 }
 requestAnimationFrame(draw);
 */
+
+
+// toDo:
+// integers as keys of Map
+// array version (integer keys)
+// memoized version of hashLive

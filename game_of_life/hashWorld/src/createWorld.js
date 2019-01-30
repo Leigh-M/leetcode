@@ -17,16 +17,9 @@ function setSeed(seed, target) {
   return grd;
 }
 
-function createList(grid) {
-  let tot = [];
-  for (let i = 0; i < grid.length; i++) {
-    const 
-  }
-}
+/*
+console.log(createList([[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0]]));
+*/
 
-function createWorldHash(input) {
-  let grid = input;
-
-}
-
-module.exports = { createEmptyWorld, setSeed, createWorldHash };
+module.exports = { createEmptyWorld, setSeed };
