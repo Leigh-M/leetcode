@@ -17,9 +17,16 @@ function setSeed(seed, target) {
   return grd;
 }
 
+function createList(grid) {
+  let tot = [];
+  for (let i = 0; i < grid.length; i++) {
+    const 
+  }
+}
+
 function createWorldHash(input) {
   let grid = input;
-  
+
 }
 
 module.exports = { createEmptyWorld, setSeed, createWorldHash };
