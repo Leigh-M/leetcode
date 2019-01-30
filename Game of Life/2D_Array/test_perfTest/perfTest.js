@@ -1,5 +1,5 @@
-const { createRandomGrid, createBlankGrid, setSeed } = require('./gridSetupforPerfTests');
-const timer = require('./timersForPerfTest');
+const { createRandomGrid, createBlankGrid, setSeed } = require('./perfTestGridSetup');
+const timer = require('./timer');
 
 // for randomly populated test, create a large grid 1000 * 1000
 const randomG = (createRandomGrid(1000, 1000));
