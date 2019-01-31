@@ -1,15 +1,26 @@
 const hashKey = require('./hashKey');
-
-// need to add hashed neighbours of each cell to object!!
+const buildNeighbours = require('./buildNeighbours');
 
 function createWorldHash(grid) {
   const world = new Map();
-  for (let i = 0; i < grid.length; i++) {
-    for (let j = 0; j < grid[0].length; j++) {
+  const rows = grid.length;
+  const cols = grid[0].length;
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
       if (grid[i][j] === 1) {
-        world.set(hashKey([i, j]), { live: true, coords: [i, j], neighbours: [] });
+        world.set(hashKey([i, j]), {
+          live: true,
+          coords: [i, j],
+          neighbours: buildNeighbours([i, j], rows, cols),
+          liveNeighbours: 0,
+        });
       } else {
-        world.set(hashKey([i, j]), { live: false, coords: [i, j], neighbours: [] });
+        world.set(hashKey([i, j]), {
+          live: false,
+          coords: [i, j],
+          neighbours: buildNeighbours([i, j], rows, cols),
+          liveNeighbours: 0,
+        });
       }
     }
   }
