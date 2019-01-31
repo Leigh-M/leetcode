@@ -2,37 +2,34 @@
 // view readme.md for usage/ design notes
 const { createEmptyWorld, setSeed } = require('./createWorld');
 const createWorldHash = require('./createWorldHash');
-const { life } = require('./life');
+const life = require('./life');
 
-// const canv = document.getElementById('life');
-// const ctx = canv.getContext('2d');
-// ctx.fillStyle = '#101010';
+const canv = document.getElementById('life');
+const ctx = canv.getContext('2d');
+ctx.fillStyle = '#101010';
 
-const world = createEmptyWorld(10, 10);
+const world = createEmptyWorld(200, 200);
+
 const seed = [
-  [1, 3], [2, 2], [3, 4],
+  [100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100],
 ];
+
 const seeded = setSeed(seed, world);
-const worldHash = createWorldHash(seeded);
-
-console.log(worldHash);
-
-/*
-let liveCells = buildLiveHash(seed);
-let neighbours = new Map();
+let worldHash = createWorldHash(seeded);
 
 function draw() {
-  neighbours = buildNeighboursHash(liveCells, neighbours, rows, cols);
-  liveCells = life(liveCells, neighbours);
+  const liveCells = [];
+  worldHash.forEach((item) => {
+    if (item.live === true) liveCells.push(item.coords);
+  });
   ctx.clearRect(0, 0, 200, 200);
   liveCells.forEach((item) => {
-    ctx.fillRect(item.coords[0], item.coords[1], 1, 1);
+    ctx.fillRect(item[0], item[1], 1, 1);
   });
+  worldHash = life(worldHash);
   requestAnimationFrame(draw);
 }
 requestAnimationFrame(draw);
-*/
-
 
 // toDo:
 // integers as keys of Map
