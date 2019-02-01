@@ -13,15 +13,14 @@ const initialGrid = createBlankGrid(200, 200);
 const seed = [[100, 100], [101, 100], [101, 98], [103, 99], [104, 100], [105, 100], [106, 100]];
 const acornGrid = setSeed(seed, initialGrid);
 
+// 'acorn' seed on 200 * 200 grid ~ 1000ms for 500 frames, not incl draw func
+console.log(`Acorn grid 200 * 200, ms for 550 frames : ${timer(acornGrid, 550)}`);
 
 // large 1000 x 1000 grid ~ 1000ms on my machine for 15 cycles, not including draw function
 console.log(`Large 1000 * 1000 randomly populated grid, ms for 15 frames : ${timer(randomG, 15)}`);
 
 // smaller 200 * 200 random grid ~ 1000ms on my machine for 430 cycles, not including draw func
-console.log(`200 * 200 random grid, ms for 430 frames : ${timer(randomG2, 430)}`);
-
-// 'acorn' seed on 200 * 200 grid ~ 1000ms for 500 frames, not incl draw func
-console.log(`Acorn grid 200 * 200, ms for 450 frames : ${timer(acornGrid, 450)}`);
+console.log(`200 * 200 random grid, ms for 550 frames : ${timer(randomG2, 550)}`);
 
 
 //  ----------- observations ---------------  //
