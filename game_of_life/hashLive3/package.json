@@ -1,0 +1,33 @@
+{
+  "name": "hashlive",
+  "version": "1.0.0",
+  "description": "Conways Game of Life, hash live cells version",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha",
+    "start": "node server.js",
+    "dev": "webpack --mode development",
+    "dev-w": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "Game",
+    "of",
+    "Life",
+    "JavaScript",
+    "ES6",
+    "Hash"
+  ],
+  "author": "Leigh Mathieson",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
