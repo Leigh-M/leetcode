@@ -3,72 +3,10 @@
 const { expect } = require('chai');
 const buildNeighboursHash = require('../src/buildNeighboursHash');
 const buildLiveHash = require('../src/buildLiveHash');
-const { buildNeighboursTests, logicTests, lifeTests } = require('./testRunnerData');
-const {
-  life, survive,
-} = require('../src/life');
-const {
-  tag1, tag2, tag4,
-} = require('./taggedTemplates');
+const { lifeTests } = require('./testRunnerData');
+const { life } = require('../src/life');
+const tag4 = require('./taggedTemplates');
 const buildNeighsLookup = require('../src/buildNeighsLookup');
-
-/*
-// unit tests
-// tagged templates for output formatting/ readability
-
-// total neighbouring cells Map size test
-describe('buildNeighboursHash size test', function () {
-  buildNeighboursTests.forEach(function (test) {
-    const neighbours = new Map();
-    it(tag1`Should build a Map of neighbours from input cells ${test.liveCells} expected size ${test.expectedMapLength}`, function () {
-      const neighs = buildNeighboursHash(buildLiveHash(test.liveCells), neighbours, 200, 200);
-      expect(neighs.size).to.equal(test.expectedMapLength);
-    });
-  });
-});
-
-// exact adjacent cells count test
-describe('buildNeighboursHash neighbouring cell key: count test', function () {
-  buildNeighboursTests.forEach(function (test) {
-    const neighbours = new Map();
-    const neighs = buildNeighboursHash(buildLiveHash(test.liveCells), neighbours);
-    test.adj.forEach((item) => {
-      it(tag2`should expect count of neighbouring cells to cell: ${item[0]} to be: ${item[1]}`, function () {
-        expect(neighs.get(item[0]).count).to.equal(item[1]);
-      });
-    });
-  });
-});
-
-// survive test
-describe('survive logic test, remain as live', function () {
-  logicTests.forEach(function (test) {
-    it(`should expect cell ${test.stillLive} exists to be true`, function () {
-      const liveCells = buildLiveHash(test.live);
-      const neighbours = new Map();
-      const neighs = buildNeighboursHash(liveCells, neighbours, 200, 200);
-      const testCell = test.stillLive;
-      const res = survive(testCell, liveCells, neighs);
-      const exists = res.live.has(testCell);
-      expect(exists).to.equal(true);
-    });
-  });
-});
-
-describe('survive logic test, delete from neighbouring', function () {
-  logicTests.forEach(function (test) {
-    it(`should remove survivor cell ${test.stillLive} from neighbours Map to enable correct count on remaining dead cells`, function () {
-      const liveCells = buildLiveHash(test.live);
-      const neighbours = new Map();
-      const neighs = buildNeighboursHash(liveCells, neighbours, 200, 200);
-      const testCell = test.stillLive;
-      const res = survive(testCell, liveCells, neighs);
-      const inMap = res.neighs.has(testCell);
-      expect(inMap).to.equal(false);
-    });
-  });
-});
-*/
 
 // life(), whole system test
 describe('life test', function () {
@@ -78,7 +16,6 @@ describe('life test', function () {
       const rows = 200, cols = 200;
       const neighsLookup = buildNeighsLookup(rows, cols);
       const neighbours = buildNeighboursHash(liveCells, neighsLookup);
-
       const nextCells = life(liveCells, neighbours, neighsLookup);
       // secondary use here to build hashed Map of expected
       const expected = buildLiveHash(test.expected);
