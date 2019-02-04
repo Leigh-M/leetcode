@@ -2,7 +2,7 @@ const hashKey = require('./hashKey');
 
 function buildHash(coords, live) {
   const hashCode = hashKey(coords);
-  live.set(hashCode, { coords });
+  live.set(hashCode, coords);
 }
 
 function buildLiveHash(liveCells) {
