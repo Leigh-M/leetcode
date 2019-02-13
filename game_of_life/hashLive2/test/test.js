@@ -31,6 +31,7 @@ describe('life test', function () {
   });
 });
 
+// need to complete these units tests, system test running fine
 /*
 // overCrowded test
 describe('overCrowded logic test, delete from liveCells', function () {
